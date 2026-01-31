@@ -1230,9 +1230,6 @@ class AgentSession(rtc.EventEmitter[EventTypes], Generic[Userdata_T]):
 
             # Case 2: real command → interrupt
             if is_real_interruption(ev.transcript):
-                if self.agent_state == "speaking":
-                    self._pending_interruption = True
-                else:
                     self.interrupt()
 
 
